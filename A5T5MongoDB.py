@@ -10,7 +10,7 @@ def run_task_5():
     client = pymongo.MongoClient('mongodb://localhost:27017/')
     database = client["A5db"]
 
-    print('=============Initializing Task 3: MongoDB Query================')
+    print('=============Initializing Task 5: MongoDB Query================')
     neighbourhood = input('Please input a neighbourhood to calculate average rental cost/night: ')
 
     print('\nStart calculating average process time for the query ...')
