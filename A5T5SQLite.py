@@ -33,7 +33,7 @@ def run_task_5():
     print('The average query time of T5SQL takes {}s'.format(total))
     
     row = cursor.fetchall()
-    print('\nHere is the average rental cost/night for a given neighbourhood : ' + str(row[0][0]))
+    print('\nHere is the average rental cost/night for a given neighbourhood: ' + str(row[0][0]))
 
     connection.commit()
 
@@ -48,7 +48,7 @@ def main():
     run_task_5()
 
     connection.close()
-    print('Exiting the system...')
+    print('\nExiting the system...')
 
     return
 

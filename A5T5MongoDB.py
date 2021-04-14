@@ -1,9 +1,7 @@
 # All the codes below are made by Fan Zhu and Harshit Venket Subramanian
 
 import pymongo
-import pprint
 import json
-import warnings
 import time
 
 def run_task_5():
@@ -12,7 +10,6 @@ def run_task_5():
 
     print('=============Initializing Task 3: MongoDB Query================')
     neighbourhood = input('Please input a neighbourhood to calculate average rental cost/night: ')
-
     print('\nStart calculating average process time for the query ...')
 
     total = 0
@@ -35,15 +32,17 @@ def run_task_5():
     total += (end - start)
 
     print('The average query time of T5MongoDB takes {}s'.format(total))
-    print('\nHere is the average rental cost/night for a given neighbourhood : ', end = "")
+    print('\nHere is the average rental cost/night for a given neighbourhood: ', end = "")
+
     for x in doc:
-        print(x['average_price'])
+        if(x['average_price'] == ""): print("Null")
+        else: print(x['average_price'])
 
     return
 
 def main():
     run_task_5()
-    print('Exiting the system...')
+    print('\nExiting the system...')
 
     return
 
