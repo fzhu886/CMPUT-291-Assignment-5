@@ -2,14 +2,14 @@
 import random
 import sqlite3
 import csv
-with open('YVR_Airbnb_listings_summary.csv', 'r') as file:
+with open('YVR_Airbnb_listings_summary.csv', errors='ignore', mode='r') as file:
      reader = csv.reader(file)
      item_list = []
 
      for row in reader:
         item_list.append(row)
 
-f = open('YVR_Airbnb_reviews.csv', 'r')
+f = open('YVR_Airbnb_reviews.csv', errors='ignore', mode='r')
 countries = csv.reader(f)
 country_list = []
 for row in countries:

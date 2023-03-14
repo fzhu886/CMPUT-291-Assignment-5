@@ -2,7 +2,7 @@
 
 import pymongo
 import csv
-with open('YVR_Airbnb_listings_summary.csv', 'r') as file:
+with open('YVR_Airbnb_listings_summary.csv', errors='ignore', mode='r') as file:
      reader = csv.reader(file)
      item_list = []
 
@@ -13,7 +13,7 @@ with open('YVR_Airbnb_listings_summary.csv', 'r') as file:
            row[2] = int(row[2])
         item_list.append(row)
 
-f = open('YVR_Airbnb_reviews.csv', 'r')
+f = open('YVR_Airbnb_reviews.csv', errors='ignore', mode='r')
 countries = csv.reader(f)
 country_list = []
 for row in countries:
@@ -51,7 +51,7 @@ def create_collection(mydb, item_list, country_list):
        mydict["host_name"] = item_list[index1][3]
        mydict["neighbourhood"] = item_list[index1][4]
        mydict["room_type"] = item_list[index1][5]
-       mydict["price"] = item_list[index1][6]
+       mydict["price"] = int(item_list[index1][6])
        mydict["minimum"] = item_list[index1][7]
        mydict["availability_365"] = item_list[index1][8]
        mydict["reviews"] = review_list
